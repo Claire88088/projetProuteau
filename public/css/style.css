@@ -1,0 +1,24 @@
+#mapid {
+    height: 800px;
+    width: 800px;
+    margin: auto;
+}
+/*
+.leaflet-popup-content-wrapper:hover {
+    background: red;
+}
+*/
+
+.navbar {
+    background: #fff;
+    padding : 10px;
+    text-align: center;
+}
+
+.calques {
+    display: none;
+}
+
+.adresses {
+    display: none;
+}
