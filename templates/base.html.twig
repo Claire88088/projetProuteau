@@ -23,13 +23,18 @@
         {% block body %}
             <div id="mapid"></div>
 
+            <div id="calquesTab" calques="{{ calquesTab|json_encode() }}"></div>
+
+            {#
             {% for calque in calques %}
                 <div class="calques" calques="{{ calque.nom }}"></div>
-            {% endfor %}
-            {% endblock %}
+            {% endfor %#}
+        {% endblock %}
+
              {% for immeuble in immeubles %}
             <div class="adresses" adresses="{{ immeuble.adresse }}"></div>
             {% endfor %}
+
         {% block javascript %}
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
                 integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
