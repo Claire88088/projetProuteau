@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Carte{% endblock %}
+
+{% block body %}
+
+    {% if not app.user %}
+    <a id="test" class="btn btn-primary" href="{{ path('app_login') }}" role="button">Se connecter</a>
+    {% else %}
+    <a id="test" class="btn btn-primary" href="{{ path('app_logout') }}" role="button">Se déconnecter</a>
+    {% endif %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" id="mapid"></div>
+
+            {% if app.user %}
+            <div class="col">
+                <div>
+                    <h1>Créer un nouvel élément sur un calque existant :</h1>
+                    {# {{ render(controller('App\\Controller\\')) }} #}
+                    {{ form(choiceCalqueForm) }}
+                    {#
+                    <form action="{{ path('select_calque') }}" method="post">
+                        <select class="form-select" aria-label="Default select example">
+                            {% for calque in calques %}
+                                <option value="{{ calque.nom|lower }}">{{ calque.nom }}</option>
+                            {% endfor %}
+
+                        </select>
+
+                        <button type="submit" class="btn btn-primary">Sélectionner le calque</button>
+                    </form>
+                    #}
+                    <h1>Créer un nouveau calque :</h1>
+                    <form action="{{ path('test') }}" method="post">
+                        <input type="text" name="testrecup">
+                        <select class="form-select" aria-label="Default select example">
+
+                                <option value="val1">valeur1</option>
+
+                                <option value="val2">valeur2</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Créer un nouveau calque</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div id="calquesTab" calques="{{ calquesTab|json_encode() }}"></div>
+
+    {#
+    {% for calque in calques %}
+        <div class="calques" calques="{{ calque.nom }}"></div>
+    {% endfor %#}
+
+    {% for immeuble in immeubles %}
+        <div class="adresses" adresses="{{ immeuble.adresse }}"></div>
+    {% endfor %}
+{% endblock %}
+

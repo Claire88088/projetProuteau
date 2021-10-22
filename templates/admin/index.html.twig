@@ -1,0 +1,19 @@
+{% extends 'map/index.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block adminBody %}
+    <div>
+        <h1>Choisir un calque sur lequel ajouter un point ou créer un nouveau calque :</h1>
+        <form>
+            <select class="form-select" aria-label="Default select example">
+                <option value="1">Travaux</option>
+                <option value="2">Etablissements Répertoriés</option>
+                <option value="3">Elément d'autoroute</option>
+                <option value="4">Nouveau</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary">Sélectionner</button>
+        </form>
+    </div>
+{% endblock %}
